@@ -35,16 +35,16 @@
                         <!-- /prev and next buttons -->
 
                         <!-- thumbs images -->
-                        <div class="thumb" :class="tabIndex === 0 ? 'active' : ''">
+                        <div class="thumb" :class="{active: tabIndex === 0}">
                             <img src="img/01.webp" alt="Spiderman" />
                         </div>
-                        <div class="thumb" :class="tabIndex === 1 ? 'active' : ''">
+                        <div class="thumb" :class="{active: tabIndex === 1}">
                             <img src="img/02.webp" alt="Ratchet & Clank" />
                         </div>
-                        <div class="thumb" :class="tabIndex === 2 ? 'active' : ''">
+                        <div class="thumb" :class="{active: tabIndex === 2}">
                             <img src="img/03.webp" alt="Fortnite" />
                         </div>
-                        <div class="thumb" :class="tabIndex === 3 ? 'active' : ''">
+                        <div class="thumb" :class="{active: tabIndex === 3}">
                             <img src="img/04.webp" alt="Stray" />
                         </div>
                         <div class="thumb" :class="tabIndex === 4 ? 'active' : ''">
