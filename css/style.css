@@ -49,6 +49,7 @@ body{
 .thumb {
     height: calc((300px) / 5);
     opacity: 0.5;
+    cursor: zoom-in;
 }
 
 .thumb img {

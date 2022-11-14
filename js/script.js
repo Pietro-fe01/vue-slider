@@ -51,6 +51,9 @@ createApp({
                     this.tabIndex++;
                 }
             }
+        },
+        selectImage: function(selectedImageIndex){
+            return this.tabIndex = selectedImageIndex;
         }
     },
     mounted(){
