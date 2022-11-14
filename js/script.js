@@ -37,5 +37,19 @@ createApp({
         };
     },
     methods: {
+        backImage: function(){
+            if(this.tabIndex === 0){
+                this.tabIndex = this.slides.length - 1;
+            } else {
+                this.tabIndex--;
+            }
+        },
+        nextImage: function(){
+            if(this.tabIndex === this.slides.length - 1){
+                this.tabIndex = 0;
+            } else {
+                this.tabIndex++;
+            }
+        }
     }
 }).mount('#app');
