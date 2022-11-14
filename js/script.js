@@ -33,11 +33,7 @@ createApp({
                     title: "Marvel's Avengers",
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
-            ],
-            // Quando col mouse si punta lo slider, l'autoplay si ferma
-            clearAutoplayImages: () => {
-                clearInterval(this.autoPlay)
-            },
+            ]
         };
     },
 
@@ -63,12 +59,17 @@ createApp({
         selectImage: function(selectedImageIndex){
             return this.tabIndex = selectedImageIndex;
         },
-
-        // Quando col mouse si esce dallo slider l'autoplay parte di nuovo
-        replayImages: function(){
-            this.autoPlay = setInterval(() => {
-                this.changeImage("next");
-            }, 3000)
+        // Funzione che ferma o fa ripartire l'autplay
+        autoPlayStartStop: function(action){
+            if(action === 'enter'){
+                console.log("enter - autoplay stops")
+                clearInterval(this.autoPlay)
+            } else if (action === 'leaving'){
+                console.log("leaving - autoplay restarts")
+                this.autoPlay = setInterval(() => {
+                    this.changeImage("next");
+                }, 1000)
+            }
         }
     },
 
@@ -76,6 +77,6 @@ createApp({
         // Funzione che continua a scorrere le immagini 'next' ogni 3s
         this.autoPlay = setInterval(() => {
             this.changeImage("next");
-        }, 3000)
+        }, 1000)
     }
 }).mount('#app');
