@@ -15,7 +15,7 @@
     <body>
         <div id="app">
             <div class="container">
-                <div class="slider-wrapper" :tabindex="tabIndex">
+                <div class="slider-wrapper" :tabindex="tabIndex" @mouseover="clearAutoplayImages" @mouseleave="replayImages">
 
                     <!-- Immagine mostrata sulla sinistra -->
                     <div class="item">
