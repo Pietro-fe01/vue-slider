@@ -51,6 +51,9 @@ createApp({
                     this.tabIndex++;
                 }
             }
-        },
+        }
+    },
+    mounted(){
+        setInterval(this.changeImage('next'), 1000)
     }
 }).mount('#app');
