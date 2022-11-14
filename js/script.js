@@ -54,7 +54,6 @@ createApp({
                 }
             }
         },
-
         // Funzione che mostra nello slider la thumb img cliccata
         selectImage: function(selectedImageIndex){
             return this.tabIndex = selectedImageIndex;
@@ -68,7 +67,7 @@ createApp({
                 console.log("leaving - autoplay restarts")
                 this.autoPlay = setInterval(() => {
                     this.changeImage("next");
-                }, 1000)
+                }, 3000)
             }
         }
     },
@@ -77,6 +76,6 @@ createApp({
         // Funzione che continua a scorrere le immagini 'next' ogni 3s
         this.autoPlay = setInterval(() => {
             this.changeImage("next");
-        }, 1000)
+        }, 3000)
     }
 }).mount('#app');
