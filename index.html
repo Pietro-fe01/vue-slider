@@ -8,25 +8,26 @@
         <title>Slider</title>
         <link rel="stylesheet" href="./css/style.css" />
         <!-- Vue.js CDN -->
-        <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <!-- /Vue.js CDN -->
     </head>
 
     <body>
         <div id="app">
             <div class="container">
-                <div class="slider-wrapper" tabindex="0">
+                <div class="slider-wrapper" :tabindex="tabIndex">
 
+                    <!-- Immagine mostrata sulla sinistra -->
                     <div class="item">
-                        <img src="img/01.webp" alt="Spiderman" />
+                        <img :src="slides[tabIndex].image" alt="Spiderman" />
                         <div class="text">
-                            <h3>Spiderman</h3>
-                            <p>
-                                Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.
-                            </p>
+                            <h3>{{ slides[tabIndex].title }}</h3>
+                            <p>{{ slides[tabIndex].text }}</p>
                         </div>
                     </div>
+                    <!-- /Immagine mostrata sulla sinistra -->
 
+                    <!-- Thumbs sulla destra -->
                     <div class="thumbs">
                         <div class="prev"></div>
                         <div class="next"></div>
@@ -46,6 +47,7 @@
                             <img src="img/05.webp" alt="Avengers" />
                         </div>
                     </div>
+                    <!-- /Thumbs sulla destra -->
 
                 </div>
             </div>
